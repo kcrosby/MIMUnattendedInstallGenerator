@@ -10,11 +10,23 @@ namespace MIMUnattendedInstallGenerator
     {
         public class InstallOptions
         {
+            //initializations
+            private IList<string> servicesToInstall = new List<string>();
 
             //general
             public string InstallDrive { get; set; }
             public string LogPath { get; set; }
-            public IList<string> ServicesToInstall { get; set; }
+            public IList<string> ServicesToInstall
+            {
+                get
+                {
+                    return servicesToInstall;
+                }
+                set
+                {
+                    servicesToInstall = value;
+                }
+            }
             public string MSIPath { get; set; }
 
             //mim service

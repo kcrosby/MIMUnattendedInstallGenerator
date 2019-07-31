@@ -102,7 +102,7 @@ namespace MIMUnattendedInstallGenerator
                 MIMSvcAcctPwdTxt.Text = d.MIMSvcAcctPwd;
                 MIMSvcAccountDomain.Text = o.MIMSvcAcctDomain;
                 MIMSvcEmailAddrTxt.Text = o.MIMSvcAcctEmail;
-                MIMSvcEmailPwd.Text = d.MIMSvcAcctPwd;
+                MIMSvcEmailPwd.Text = d.MIMSvcAcctEmailPwd;
 
                 MIMSyncServerTxt.Text = o.SyncServer;
                 MIMSvcMAAcctTxt.Text = o.MIMSvcMaAcct;
@@ -493,7 +493,7 @@ namespace MIMUnattendedInstallGenerator
         {
             if (svcs_mimsvcCb.Checked)
             {
-                if (!o.ServicesToInstall.Contains("CommonServices"))
+                if (o.ServicesToInstall==null || !o.ServicesToInstall.Contains("CommonServices"))
                     o.ServicesToInstall.Add("CommonServices");
             }
             else
@@ -650,77 +650,87 @@ namespace MIMUnattendedInstallGenerator
 
                 if (o.ServicesToInstall.Contains("CommonServices"))
                 {
-                    output += " MAIL_SERVER=" + o.MailServer +
-                        " MAIL_SERVER_USE_SSL=" + BooleanToString(o.MailUseSSL) +
-                        " MAIL_SERVER_IS_EXCHANGE=" + BooleanToString(o.MailIsExch) +
-                        " POLL_EXCHANGE_ENABLED=" + BooleanToString(o.MailPollExch) +
+                    if (o.MailIsExchOnline)
+                    {
+                        output += " MAIL_SERVER_IS_EXCHANGE_ONLINE=" + BooleanToString(o.MailIsExchOnline);
+                        output += " MAIL_SERVER=outlook.office365.com";
+                        output += " MAIL_SERVER_USE_SSL=" + BooleanToString(true);
+                        output += " MAIL_SERVER_IS_EXCHANGE=" + BooleanToString(true);
+                        output += " POLL_EXCHANGE_ENABLED=" + BooleanToString(true);
+                    }
+                    else
+                    {
+                        if (!string.IsNullOrEmpty(o.MailServer)) { output += " MAIL_SERVER=" + o.MailServer; }
+                        output += " MAIL_SERVER_USE_SSL=" + BooleanToString(o.MailUseSSL);
+                        output += " MAIL_SERVER_IS_EXCHANGE=" + BooleanToString(o.MailIsExch);
+                        output += " POLL_EXCHANGE_ENABLED=" + BooleanToString(o.MailPollExch);
+                        output += " MAIL_SERVER_IS_EXCHANGE_ONLINE=" + BooleanToString(o.MailIsExchOnline);
+                    }
 
-                        " SHAREPOINT_URL=" + o.MIMPortalURL +
+                    if (!string.IsNullOrEmpty(o.MIMPortalURL)) { output += " SQLSERVER_SERVER=" + o.SQLInstance; }
+                    if (!string.IsNullOrEmpty(o.SQLInstance)) { output += " SQLSERVER_DATABASE=" + o.SQLDBName; }
+                    if (!string.IsNullOrEmpty(o.SQLDBName)) { output += " SHAREPOINT_URL=" + o.MIMPortalURL; }
+                    output += " EXISTINGDATABASE=" + BooleanToString(o.SQLUseExisting);
 
-                        " SQLSERVER_SERVER=" + o.SQLInstance +
-                        " SQLSERVER_DATABASE=" + o.SQLDBName +
-                        " EXISTINGDATABASE=" + BooleanToString(o.SQLUseExisting) +
+                    if (!string.IsNullOrEmpty(o.MIMSvcAcctName)) { output += " SERVICE_ACCOUNT_NAME=" + o.MIMSvcAcctName; }
+                    if (!string.IsNullOrEmpty(o.MIMSvcAcctPwd)) { output += " SERVICE_ACCOUNT_PASSWORD=\"" + d.MIMSvcAcctPwd + "\""; }
+                    if (!string.IsNullOrEmpty(o.MIMSvcAcctDomain)) { output += " SERVICE_ACCOUNT_DOMAIN=" + o.MIMSvcAcctDomain; }
+                    if (!string.IsNullOrEmpty(o.MIMSvcAcctEmail)) { output += " SERVICE_ACCOUNT_EMAIL=" + o.MIMSvcAcctEmail; }
+                    if (!string.IsNullOrEmpty(o.MIMSvcAcctEmailPwd)) { output += " SERVICE_ACCOUNT_EMAIL_PASSWORD=\"" + d.MIMSvcAcctEmailPwd + "\""; }
 
-                        " SERVICE_ACCOUNT_NAME=" + o.MIMSvcAcctName +
-                        " SERVICE_ACCOUNT_PASSWORD=\"" + d.MIMSvcAcctPwd + "\"" +
-                        " SERVICE_ACCOUNT_DOMAIN=" + o.MIMSvcAcctDomain +
-                        " SERVICE_ACCOUNT_EMAIL=" + o.MIMSvcAcctEmail +
-                        " SERVICE_ACCOUNT_EMAIL_PASSWORD=\"" + o.MIMSvcAcctEmailPwd + "\"" +
+                    if (!string.IsNullOrEmpty(o.MIMSvcMaAcct)) { output += " SYNCHRONIZATION_SERVER_ACCOUNT=" + o.MIMSvcMaAcct; }
+                    if (!string.IsNullOrEmpty(o.SyncServer)) { output += " SYNCHRONIZATION_SERVER=" + o.SyncServer; }
+                    if (!string.IsNullOrEmpty(o.MIMSvcAddr)) { output += " SERVICEADDRESS=" + o.MIMSvcAddr; }
 
-                        " SYNCHRONIZATION_SERVER_ACCOUNT=" + o.MIMSvcMaAcct +
-                        " SYNCHRONIZATION_SERVER=" + o.SyncServer +
-                        " SERVICEADDRESS=" + o.MIMSvcAddr;
                 }
 
                 if (o.ServicesToInstall.Contains("WebPortals"))
                 {
-                    output += " SHAREPOINTUSERS_CONF=1" +
-                        " SHAREPOINTTIMEOUT=" + o.SPTimeOut +
-                        " REGISTRATION_PORTAL_URL=" + o.MIMSSPRRegURL;
+                    output += " SHAREPOINTUSERS_CONF=1";
+                    if (!string.IsNullOrEmpty(o.SPTimeOut)) { output += " SHAREPOINTTIMEOUT=" + o.SPTimeOut; }
+                    if (!string.IsNullOrEmpty(o.MIMSSPRRegURL)) { output += " REGISTRATION_PORTAL_URL=" + o.MIMSSPRRegURL; }
                 }
 
                 if (o.ServicesToInstall.Contains("RegistrationPortal"))
                 {
-                    output += " REGISTRATION_ACCOUNT=" + o.RegSvcAcctName +
-                        " REGISTRATION_ACCOUNT_PASSWORD=\"" + d.RegSvcAcctPwd + "\"" +
-                        " REGISTRATION_PORT=" + o.RegSvcPort +
-                        " REGISTRATION_SERVERNAME=" + o.RegMIMSvcName +
-                        " IS_REGISTRATION_EXTRANET=" + BooleanToString(o.RegSvcIsExtranet) +
-                        " REGISTRATION_PORTAL_URL=" + o.RegSvcHostName +
-                        " REGISTRATION_FIREWALL_CONFIG=" + BooleanToString(o.RegConfigFW);
+                    if (!string.IsNullOrEmpty(o.RegSvcAcctName)) { output += " REGISTRATION_ACCOUNT=" + o.RegSvcAcctName; }
+                    if (!string.IsNullOrEmpty(o.RegSvcPort)) { output += " REGISTRATION_PORT=" + o.RegSvcPort; }
+                    if (!string.IsNullOrEmpty(o.RegSvcAcctPwd)) { output += " REGISTRATION_ACCOUNT_PASSWORD=\"" + d.RegSvcAcctPwd + "\""; }
+                    if (!string.IsNullOrEmpty(o.RegMIMSvcName)) { output += " REGISTRATION_SERVERNAME=" + o.RegMIMSvcName; }
+                    output += " IS_REGISTRATION_EXTRANET=" + BooleanToString(o.RegSvcIsExtranet);
+                    if (!string.IsNullOrEmpty(o.RegSvcHostName)) { output += " REGISTRATION_PORTAL_URL=" + o.RegSvcHostName; }
+                    output += " REGISTRATION_FIREWALL_CONFIG=" + BooleanToString(o.RegConfigFW);
                 }
 
                 if (o.ServicesToInstall.Contains("ResetPortal"))
                 {
-                    output += " RESET_ACCOUNT=" + o.ResSvcAcctName +
-                        " RESET_ACCOUNT_PASSWORD=\"" + d.ResSvcAcctPwd + "\"" +
-                        " RESET_PORT=" + o.ResSvcPort +
-                        " RESET_SERVERNAME=" + o.ResMIMSvcName +
-                        " IS_RESET_EXTRANET=" + BooleanToString(o.ResSvcIsExtranet) +
-                        " RESET_PORTAL_URL=" + o.ResSvcHostName +
-                        " RESET_FIREWALL_CONFIG=" + BooleanToString(o.ResConfigFW);
+                    if (!string.IsNullOrEmpty(o.ResSvcAcctName)) { output += " RESET_ACCOUNT=" + o.ResSvcAcctName; }
+                    if (!string.IsNullOrEmpty(o.ResSvcPort)) { output += " RESET_ACCOUNT_PASSWORD=\"" + d.ResSvcAcctPwd + "\""; }
+                    if (!string.IsNullOrEmpty(o.ResSvcAcctPwd)) { output += " RESET_PORT=" + o.ResSvcPort; }
+                    if (!string.IsNullOrEmpty(o.ResMIMSvcName)) { output += " RESET_SERVERNAME=" + o.ResMIMSvcName; }
+                    output += " IS_RESET_EXTRANET=" + BooleanToString(o.ResSvcIsExtranet);
+                    if (!string.IsNullOrEmpty(o.ResSvcHostName)) { output += " RESET_PORTAL_URL=" + o.ResSvcHostName; }
+                    output += " RESET_FIREWALL_CONFIG=" + BooleanToString(o.ResConfigFW);
                 }
 
                 if (o.ServicesToInstall.Contains("PAMServices"))
                 {
-
-                    output += " PAM_MONITORING_SERVICE_ACCOUNT_DOMAIN=" + o.PAMMonSvcAcctDomain +
-                        " PAM_MONITORING_SERVICE_ACCOUNT_NAME=" + o.PAMMonSvcAcctName +
-                        " PAM_MONITORING_SERVICE_ACCOUNT_PASSWORD=\"" + d.PAMMonSvcAcctPwd + "\"" +
-                        " PAM_COMPONENT_SERVICE_ACCOUNT_DOMAIN=" + o.PAMComSvcAcctDomain +
-                        " PAM_COMPONENT_SERVICE_ACCOUNT_NAME=" + o.PAMComSvcAcctName +
-                        " PAM_COMPONENT_SERVICE_ACCOUNT_PASSWORD=\"" + d.PAMComSvcAcctPwd + "\"" + "" +
-                        " PAM_REST_API_APPPOOL_ACCOUNT_DOMAIN=" + o.PAMAPISvcAcctDomain +
-                        " PAM_REST_API_APPPOOL_ACCOUNT_NAME=" + o.PAMAPISvcAcctName +
-                        " PAM_REST_API_APPPOOL_ACCOUNT_PASSWORD=\"" + d.PAMAPISvcAcctPwd + "\"" +
-                        " MIMPAM_REST_API_PORT=" + o.PAMAPIPort +
-                        " CONFIG_FIREWALL=" + o.PAMAPIConfigFW;
-
+                    if (!string.IsNullOrEmpty(o.PAMMonSvcAcctDomain)) { output += " PAM_MONITORING_SERVICE_ACCOUNT_DOMAIN=" + o.PAMMonSvcAcctDomain; }
+                    if (!string.IsNullOrEmpty(o.PAMMonSvcAcctName)) { output += " PAM_MONITORING_SERVICE_ACCOUNT_NAME=" + o.PAMMonSvcAcctName; }
+                    if (!string.IsNullOrEmpty(o.PAMMonSvcAcctPwd)) { output += " PAM_MONITORING_SERVICE_ACCOUNT_PASSWORD=\"" + d.PAMMonSvcAcctPwd + "\""; }
+                    if (!string.IsNullOrEmpty(o.PAMComSvcAcctDomain)) { output += " PAM_COMPONENT_SERVICE_ACCOUNT_DOMAIN=" + o.PAMComSvcAcctDomain; }
+                    if (!string.IsNullOrEmpty(o.PAMComSvcAcctName)) { output += " PAM_COMPONENT_SERVICE_ACCOUNT_NAME=" + o.PAMComSvcAcctName; }
+                    if (!string.IsNullOrEmpty(o.PAMComSvcAcctPwd)) { output += " PAM_COMPONENT_SERVICE_ACCOUNT_PASSWORD=\"" + d.PAMComSvcAcctPwd + "\"" + ""; }
+                    if (!string.IsNullOrEmpty(o.PAMAPISvcAcctDomain)) { output += " PAM_REST_API_APPPOOL_ACCOUNT_DOMAIN=" + o.PAMAPISvcAcctDomain; }
+                    if (!string.IsNullOrEmpty(o.PAMAPISvcAcctName)) { output += " PAM_REST_API_APPPOOL_ACCOUNT_NAME=" + o.PAMAPISvcAcctName; }
+                    if (!string.IsNullOrEmpty(o.PAMAPISvcAcctPwd)) { output += " PAM_REST_API_APPPOOL_ACCOUNT_PASSWORD=\"" + d.PAMAPISvcAcctPwd + "\""; }
+                    if (!string.IsNullOrEmpty(o.PAMAPIPort)) { output += " MIMPAM_REST_API_PORT=" + o.PAMAPIPort; }
+                    output += " CONFIG_FIREWALL=" + BooleanToString(o.PAMAPIConfigFW);
                 }
 
                 if (o.ServicesToInstall.Contains("FIMReporting"))
                 {
-                    output += " SERVICE_MANAGER_SERVER=" + o.SCSMServerName;
+                    if (!string.IsNullOrEmpty(o.SCSMServerName)) { output += " SERVICE_MANAGER_SERVER=" + o.SCSMServerName; }
                 }
 
                 if (!string.IsNullOrWhiteSpace(o.LogPath))
