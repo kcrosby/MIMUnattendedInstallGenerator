@@ -86,11 +86,18 @@ namespace MIMUnattendedInstallGenerator
                 UpdateOutput("Target URL: " + url);
                 string username = Options.MIMSvcAcctName;
                 string domain = Options.MIMSvcAcctDomain;
-                string password = Options.MIMSvcAcctPwd;
+                string password = Decrypted.MIMSvcAcctPwd;
                 string dispName = Options.MIMSvcAcctDomain + @"\" + Options.MIMSvcAcctName;
-                if (Options.MailIsExchOnline) { username = Options.MIMSvcAcctEmail; domain = null; password = Options.MIMSvcAcctEmailPwd; dispName = Options.MIMSvcAcctEmail; }
+                NetworkCredential netCred = new NetworkCredential(username, password, domain);
+                if (Options.MailIsExchOnline) {
+                    username = Options.MIMSvcAcctEmail;
+                    domain = null;
+                    password = Decrypted.MIMSvcAcctEmailPwd;
+                    dispName = Options.MIMSvcAcctEmail;
+                    netCred = new NetworkCredential(username, password);
+                }
                 UpdateOutput("Connecting as " + dispName);
-                var netCred = new NetworkCredential(username, password, domain);
+                
                 // try accessing the web service directly via it's URL
                 HttpWebRequest request =
                     WebRequest.Create(url) as HttpWebRequest;
@@ -103,6 +110,7 @@ namespace MIMUnattendedInstallGenerator
                     if (response.StatusCode != HttpStatusCode.OK)
                         throw new Exception(String.Format("Status '{0}' returned.",response.StatusDescription));
                 }
+                UpdateOutput("Connection established successfully!");
             }
             catch (Exception ex)
             {
