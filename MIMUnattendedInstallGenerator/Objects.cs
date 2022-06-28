@@ -45,6 +45,7 @@ namespace MIMUnattendedInstallGenerator
             public string MIMSvcAcctDomain { get; set; }
             public string MIMSvcAcctEmail { get; set; }
             public string MIMSvcAcctEmailPwd { get; set; }
+            public bool MIMSvcAcctIsGMSA { get; set; }
 
             public string SyncServer { get; set; }
             public string MIMSvcMaAcct { get; set; }

@@ -249,7 +249,7 @@
             this.checkBox10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkBox10.Location = new System.Drawing.Point(31, 137);
             this.checkBox10.Name = "checkBox10";
-            this.checkBox10.Size = new System.Drawing.Size(90, 20);
+            this.checkBox10.Size = new System.Drawing.Size(89, 20);
             this.checkBox10.TabIndex = 12;
             this.checkBox10.Text = "MIM Portal";
             this.checkBox10.UseVisualStyleBackColor = true;
@@ -261,7 +261,7 @@
             this.checkBox9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkBox9.Location = new System.Drawing.Point(31, 113);
             this.checkBox9.Name = "checkBox9";
-            this.checkBox9.Size = new System.Drawing.Size(192, 20);
+            this.checkBox9.Size = new System.Drawing.Size(191, 20);
             this.checkBox9.TabIndex = 11;
             this.checkBox9.Text = "MIM Password Reset Portal";
             this.checkBox9.UseVisualStyleBackColor = true;
@@ -273,7 +273,7 @@
             this.checkBox8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkBox8.Location = new System.Drawing.Point(31, 89);
             this.checkBox8.Name = "checkBox8";
-            this.checkBox8.Size = new System.Drawing.Size(228, 20);
+            this.checkBox8.Size = new System.Drawing.Size(227, 20);
             this.checkBox8.TabIndex = 10;
             this.checkBox8.Text = "MIM Password Registration Portal";
             this.checkBox8.UseVisualStyleBackColor = true;
@@ -285,7 +285,7 @@
             this.checkBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkBox7.Location = new System.Drawing.Point(48, 65);
             this.checkBox7.Name = "checkBox7";
-            this.checkBox7.Size = new System.Drawing.Size(218, 20);
+            this.checkBox7.Size = new System.Drawing.Size(217, 20);
             this.checkBox7.TabIndex = 9;
             this.checkBox7.Text = "Privileged Access Management";
             this.checkBox7.UseVisualStyleBackColor = true;
@@ -297,7 +297,7 @@
             this.checkBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkBox6.Location = new System.Drawing.Point(48, 41);
             this.checkBox6.Name = "checkBox6";
-            this.checkBox6.Size = new System.Drawing.Size(114, 20);
+            this.checkBox6.Size = new System.Drawing.Size(113, 20);
             this.checkBox6.TabIndex = 8;
             this.checkBox6.Text = "MIM Reporting";
             this.checkBox6.UseVisualStyleBackColor = true;
@@ -309,7 +309,7 @@
             this.svcs_mimsvcCb.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.svcs_mimsvcCb.Location = new System.Drawing.Point(31, 18);
             this.svcs_mimsvcCb.Name = "svcs_mimsvcCb";
-            this.svcs_mimsvcCb.Size = new System.Drawing.Size(101, 20);
+            this.svcs_mimsvcCb.Size = new System.Drawing.Size(100, 20);
             this.svcs_mimsvcCb.TabIndex = 7;
             this.svcs_mimsvcCb.Text = "MIM Service";
             this.svcs_mimsvcCb.UseVisualStyleBackColor = true;
@@ -339,7 +339,7 @@
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(15, 255);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(91, 16);
+            this.label3.Size = new System.Drawing.Size(90, 16);
             this.label3.TabIndex = 5;
             this.label3.Text = "Install to Drive";
             // 
@@ -358,7 +358,7 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(18, 224);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(88, 16);
+            this.label1.Size = new System.Drawing.Size(87, 16);
             this.label1.TabIndex = 3;
             this.label1.Text = "Log Directory";
             // 
@@ -377,7 +377,7 @@
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(45, 194);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(61, 16);
+            this.label2.Size = new System.Drawing.Size(60, 16);
             this.label2.TabIndex = 1;
             this.label2.Text = "MSI Path";
             // 
@@ -414,7 +414,7 @@
             // 
             this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(484, 303);
+            this.textBox1.Location = new System.Drawing.Point(513, 303);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(375, 38);
@@ -425,7 +425,7 @@
             // MIMSvcNameTxt
             // 
             this.MIMSvcNameTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MIMSvcNameTxt.Location = new System.Drawing.Point(663, 267);
+            this.MIMSvcNameTxt.Location = new System.Drawing.Point(692, 267);
             this.MIMSvcNameTxt.Name = "MIMSvcNameTxt";
             this.MIMSvcNameTxt.Size = new System.Drawing.Size(196, 22);
             this.MIMSvcNameTxt.TabIndex = 27;
@@ -437,7 +437,7 @@
             this.checkBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkBox5.Location = new System.Drawing.Point(300, 200);
             this.checkBox5.Name = "checkBox5";
-            this.checkBox5.Size = new System.Drawing.Size(156, 20);
+            this.checkBox5.Size = new System.Drawing.Size(155, 20);
             this.checkBox5.TabIndex = 11;
             this.checkBox5.Text = "Use Exchange Online";
             this.checkBox5.UseVisualStyleBackColor = true;
@@ -449,7 +449,7 @@
             this.checkBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkBox4.Location = new System.Drawing.Point(300, 176);
             this.checkBox4.Name = "checkBox4";
-            this.checkBox4.Size = new System.Drawing.Size(195, 20);
+            this.checkBox4.Size = new System.Drawing.Size(194, 20);
             this.checkBox4.TabIndex = 10;
             this.checkBox4.Text = "Enable Polling for Exchange";
             this.checkBox4.UseVisualStyleBackColor = true;
@@ -461,7 +461,7 @@
             this.checkBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkBox3.Location = new System.Drawing.Point(300, 152);
             this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(171, 20);
+            this.checkBox3.Size = new System.Drawing.Size(170, 20);
             this.checkBox3.TabIndex = 9;
             this.checkBox3.Text = "Mail Server is Exchange";
             this.checkBox3.UseVisualStyleBackColor = true;
@@ -473,7 +473,7 @@
             this.checkBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkBox2.Location = new System.Drawing.Point(484, 46);
             this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(189, 20);
+            this.checkBox2.Size = new System.Drawing.Size(188, 20);
             this.checkBox2.TabIndex = 8;
             this.checkBox2.Text = "Use Pre-Existing Database";
             this.checkBox2.UseVisualStyleBackColor = true;
@@ -494,7 +494,7 @@
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(165, 49);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(108, 16);
+            this.label6.Size = new System.Drawing.Size(107, 16);
             this.label6.TabIndex = 6;
             this.label6.Text = "Database Name";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -514,7 +514,7 @@
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(33, 20);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(240, 16);
+            this.label5.Size = new System.Drawing.Size(239, 16);
             this.label5.TabIndex = 4;
             this.label5.Text = "SQL Server (Server or Server\\Instance)";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -525,7 +525,7 @@
             this.checkBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkBox1.Location = new System.Drawing.Point(300, 128);
             this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(83, 20);
+            this.checkBox1.Size = new System.Drawing.Size(82, 20);
             this.checkBox1.TabIndex = 3;
             this.checkBox1.Text = "Use SSL ";
             this.checkBox1.UseVisualStyleBackColor = true;
@@ -546,7 +546,7 @@
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(13, 103);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(260, 16);
+            this.label4.Size = new System.Drawing.Size(259, 16);
             this.label4.TabIndex = 0;
             this.label4.Text = "Mail Server Host Name (mail.domain.com)";
             // 
@@ -564,7 +564,7 @@
             this.groupBox4.Controls.Add(this.MIMSvcAccountDomain);
             this.groupBox4.Location = new System.Drawing.Point(16, 245);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(402, 250);
+            this.groupBox4.Size = new System.Drawing.Size(454, 250);
             this.groupBox4.TabIndex = 28;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "MIM Service Account";
@@ -573,20 +573,20 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(119, 38);
+            this.label7.Location = new System.Drawing.Point(90, 38);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(45, 16);
+            this.label7.Size = new System.Drawing.Size(119, 16);
             this.label7.TabIndex = 12;
-            this.label7.Text = "Name";
+            this.label7.Text = "sAMAccountName";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(96, 66);
+            this.label8.Location = new System.Drawing.Point(142, 66);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(68, 16);
+            this.label8.Size = new System.Drawing.Size(67, 16);
             this.label8.TabIndex = 13;
             this.label8.Text = "Password";
             this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -596,9 +596,9 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(109, 94);
+            this.label9.Location = new System.Drawing.Point(155, 94);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(55, 16);
+            this.label9.Size = new System.Drawing.Size(54, 16);
             this.label9.TabIndex = 14;
             this.label9.Text = "Domain";
             this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -607,9 +607,9 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(68, 122);
+            this.label10.Location = new System.Drawing.Point(114, 122);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(96, 16);
+            this.label10.Size = new System.Drawing.Size(95, 16);
             this.label10.TabIndex = 15;
             this.label10.Text = "Email Address";
             this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -618,17 +618,17 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(17, 150);
+            this.label11.Location = new System.Drawing.Point(9, 150);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(147, 16);
+            this.label11.Size = new System.Drawing.Size(201, 16);
             this.label11.TabIndex = 16;
-            this.label11.Text = "Email Password (O365)";
+            this.label11.Text = "Email Password (O365 or gMSA)";
             this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // MIMSvcAcctNameTxt
             // 
             this.MIMSvcAcctNameTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MIMSvcAcctNameTxt.Location = new System.Drawing.Point(180, 35);
+            this.MIMSvcAcctNameTxt.Location = new System.Drawing.Point(226, 35);
             this.MIMSvcAcctNameTxt.Name = "MIMSvcAcctNameTxt";
             this.MIMSvcAcctNameTxt.Size = new System.Drawing.Size(171, 22);
             this.MIMSvcAcctNameTxt.TabIndex = 17;
@@ -637,7 +637,7 @@
             // MIMSvcEmailPwd
             // 
             this.MIMSvcEmailPwd.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MIMSvcEmailPwd.Location = new System.Drawing.Point(180, 147);
+            this.MIMSvcEmailPwd.Location = new System.Drawing.Point(226, 147);
             this.MIMSvcEmailPwd.Name = "MIMSvcEmailPwd";
             this.MIMSvcEmailPwd.Size = new System.Drawing.Size(171, 22);
             this.MIMSvcEmailPwd.TabIndex = 21;
@@ -647,7 +647,7 @@
             // MIMSvcAcctPwdTxt
             // 
             this.MIMSvcAcctPwdTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MIMSvcAcctPwdTxt.Location = new System.Drawing.Point(180, 63);
+            this.MIMSvcAcctPwdTxt.Location = new System.Drawing.Point(226, 63);
             this.MIMSvcAcctPwdTxt.Name = "MIMSvcAcctPwdTxt";
             this.MIMSvcAcctPwdTxt.Size = new System.Drawing.Size(171, 22);
             this.MIMSvcAcctPwdTxt.TabIndex = 18;
@@ -657,7 +657,7 @@
             // MIMSvcEmailAddrTxt
             // 
             this.MIMSvcEmailAddrTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MIMSvcEmailAddrTxt.Location = new System.Drawing.Point(180, 119);
+            this.MIMSvcEmailAddrTxt.Location = new System.Drawing.Point(226, 119);
             this.MIMSvcEmailAddrTxt.Name = "MIMSvcEmailAddrTxt";
             this.MIMSvcEmailAddrTxt.Size = new System.Drawing.Size(171, 22);
             this.MIMSvcEmailAddrTxt.TabIndex = 20;
@@ -666,7 +666,7 @@
             // MIMSvcAccountDomain
             // 
             this.MIMSvcAccountDomain.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MIMSvcAccountDomain.Location = new System.Drawing.Point(180, 91);
+            this.MIMSvcAccountDomain.Location = new System.Drawing.Point(226, 91);
             this.MIMSvcAccountDomain.Name = "MIMSvcAccountDomain";
             this.MIMSvcAccountDomain.Size = new System.Drawing.Size(171, 22);
             this.MIMSvcAccountDomain.TabIndex = 19;
@@ -678,7 +678,7 @@
             this.groupBox5.Controls.Add(this.label12);
             this.groupBox5.Controls.Add(this.MIMSyncServerTxt);
             this.groupBox5.Controls.Add(this.MIMSvcMAAcctTxt);
-            this.groupBox5.Location = new System.Drawing.Point(458, 377);
+            this.groupBox5.Location = new System.Drawing.Point(487, 377);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(421, 118);
             this.groupBox5.TabIndex = 30;
@@ -702,7 +702,7 @@
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.Location = new System.Drawing.Point(36, 33);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(152, 16);
+            this.label12.Size = new System.Drawing.Size(151, 16);
             this.label12.TabIndex = 22;
             this.label12.Text = "Sync Server Host Name";
             // 
@@ -727,7 +727,7 @@
             // groupBox6
             // 
             this.groupBox6.Controls.Add(this.label14);
-            this.groupBox6.Location = new System.Drawing.Point(458, 245);
+            this.groupBox6.Location = new System.Drawing.Point(487, 245);
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.Size = new System.Drawing.Size(421, 113);
             this.groupBox6.TabIndex = 31;
@@ -740,7 +740,7 @@
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.Location = new System.Drawing.Point(36, 25);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(153, 16);
+            this.label14.Size = new System.Drawing.Size(152, 16);
             this.label14.TabIndex = 26;
             this.label14.Text = "MIM Service Host Name";
             // 
@@ -767,7 +767,7 @@
             this.label13.AutoSize = true;
             this.label13.Location = new System.Drawing.Point(294, 98);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(60, 16);
+            this.label13.Size = new System.Drawing.Size(59, 16);
             this.label13.TabIndex = 7;
             this.label13.Text = "seconds";
             // 
@@ -790,7 +790,7 @@
             this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label17.Location = new System.Drawing.Point(33, 54);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(173, 16);
+            this.label17.Size = new System.Drawing.Size(172, 16);
             this.label17.TabIndex = 5;
             this.label17.Text = "Password Registration URL";
             this.label17.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -829,7 +829,7 @@
             this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label15.Location = new System.Drawing.Point(105, 21);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(101, 16);
+            this.label15.Size = new System.Drawing.Size(100, 16);
             this.label15.TabIndex = 0;
             this.label15.Text = "MIM Portal URL";
             // 
@@ -873,7 +873,7 @@
             this.label16.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.label16.Location = new System.Drawing.Point(295, 34);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(128, 16);
+            this.label16.Size = new System.Drawing.Size(127, 16);
             this.label16.TabIndex = 7;
             this.label16.Text = "DOMAIN\\Username";
             // 
@@ -883,7 +883,7 @@
             this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label18.Location = new System.Drawing.Point(25, 34);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(56, 16);
+            this.label18.Size = new System.Drawing.Size(55, 16);
             this.label18.TabIndex = 0;
             this.label18.Text = "Account";
             // 
@@ -893,7 +893,7 @@
             this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label19.Location = new System.Drawing.Point(13, 64);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(68, 16);
+            this.label19.Size = new System.Drawing.Size(67, 16);
             this.label19.TabIndex = 1;
             this.label19.Text = "Password";
             // 
@@ -903,7 +903,7 @@
             this.regCofgFwTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.regCofgFwTxt.Location = new System.Drawing.Point(256, 157);
             this.regCofgFwTxt.Name = "regCofgFwTxt";
-            this.regCofgFwTxt.Size = new System.Drawing.Size(122, 20);
+            this.regCofgFwTxt.Size = new System.Drawing.Size(121, 20);
             this.regCofgFwTxt.TabIndex = 20;
             this.regCofgFwTxt.Text = "Open in Firewall";
             this.regCofgFwTxt.UseVisualStyleBackColor = true;
@@ -943,7 +943,7 @@
             this.label26.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label26.Location = new System.Drawing.Point(52, 132);
             this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(114, 16);
+            this.label26.Size = new System.Drawing.Size(113, 16);
             this.label26.TabIndex = 18;
             this.label26.Text = "Portal Host Name";
             // 
@@ -953,7 +953,7 @@
             this.regExtCb.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.regExtCb.Location = new System.Drawing.Point(169, 213);
             this.regExtCb.Name = "regExtCb";
-            this.regExtCb.Size = new System.Drawing.Size(173, 20);
+            this.regExtCb.Size = new System.Drawing.Size(172, 20);
             this.regExtCb.TabIndex = 3;
             this.regExtCb.Text = "This is an Extranet Portal";
             this.regExtCb.UseVisualStyleBackColor = true;
@@ -974,7 +974,7 @@
             this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label21.Location = new System.Drawing.Point(13, 103);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(153, 16);
+            this.label21.Size = new System.Drawing.Size(152, 16);
             this.label21.TabIndex = 4;
             this.label21.Text = "MIM Service Host Name";
             // 
@@ -984,7 +984,7 @@
             this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label20.Location = new System.Drawing.Point(131, 159);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(32, 16);
+            this.label20.Size = new System.Drawing.Size(31, 16);
             this.label20.TabIndex = 2;
             this.label20.Text = "Port";
             // 
@@ -1025,7 +1025,7 @@
             this.resExtCb.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.resExtCb.Location = new System.Drawing.Point(169, 213);
             this.resExtCb.Name = "resExtCb";
-            this.resExtCb.Size = new System.Drawing.Size(173, 20);
+            this.resExtCb.Size = new System.Drawing.Size(172, 20);
             this.resExtCb.TabIndex = 12;
             this.resExtCb.Text = "This is an Extranet Portal";
             this.resExtCb.UseVisualStyleBackColor = true;
@@ -1037,7 +1037,7 @@
             this.resCfgFwTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.resCfgFwTxt.Location = new System.Drawing.Point(256, 157);
             this.resCfgFwTxt.Name = "resCfgFwTxt";
-            this.resCfgFwTxt.Size = new System.Drawing.Size(122, 20);
+            this.resCfgFwTxt.Size = new System.Drawing.Size(121, 20);
             this.resCfgFwTxt.TabIndex = 23;
             this.resCfgFwTxt.Text = "Open in Firewall";
             this.resCfgFwTxt.UseVisualStyleBackColor = true;
@@ -1049,7 +1049,7 @@
             this.label39.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.label39.Location = new System.Drawing.Point(295, 34);
             this.label39.Name = "label39";
-            this.label39.Size = new System.Drawing.Size(128, 16);
+            this.label39.Size = new System.Drawing.Size(127, 16);
             this.label39.TabIndex = 21;
             this.label39.Text = "DOMAIN\\Username";
             // 
@@ -1068,7 +1068,7 @@
             this.label27.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label27.Location = new System.Drawing.Point(49, 132);
             this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(114, 16);
+            this.label27.Size = new System.Drawing.Size(113, 16);
             this.label27.TabIndex = 21;
             this.label27.Text = "Portal Host Name";
             // 
@@ -1087,7 +1087,7 @@
             this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label23.Location = new System.Drawing.Point(131, 159);
             this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(32, 16);
+            this.label23.Size = new System.Drawing.Size(31, 16);
             this.label23.TabIndex = 11;
             this.label23.Text = "Port";
             // 
@@ -1097,7 +1097,7 @@
             this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label24.Location = new System.Drawing.Point(10, 64);
             this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(68, 16);
+            this.label24.Size = new System.Drawing.Size(67, 16);
             this.label24.TabIndex = 10;
             this.label24.Text = "Password";
             // 
@@ -1107,7 +1107,7 @@
             this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label25.Location = new System.Drawing.Point(22, 34);
             this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(56, 16);
+            this.label25.Size = new System.Drawing.Size(55, 16);
             this.label25.TabIndex = 9;
             this.label25.Text = "Account";
             // 
@@ -1145,7 +1145,7 @@
             this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label22.Location = new System.Drawing.Point(10, 103);
             this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(153, 16);
+            this.label22.Size = new System.Drawing.Size(152, 16);
             this.label22.TabIndex = 13;
             this.label22.Text = "MIM Service Host Name";
             // 
@@ -1171,7 +1171,7 @@
             this.pamCfgFwCb.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pamCfgFwCb.Location = new System.Drawing.Point(640, 219);
             this.pamCfgFwCb.Name = "pamCfgFwCb";
-            this.pamCfgFwCb.Size = new System.Drawing.Size(122, 20);
+            this.pamCfgFwCb.Size = new System.Drawing.Size(121, 20);
             this.pamCfgFwCb.TabIndex = 11;
             this.pamCfgFwCb.Text = "Open in Firewall";
             this.pamCfgFwCb.UseVisualStyleBackColor = true;
@@ -1192,7 +1192,7 @@
             this.label37.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label37.Location = new System.Drawing.Point(440, 223);
             this.label37.Name = "label37";
-            this.label37.Size = new System.Drawing.Size(88, 16);
+            this.label37.Size = new System.Drawing.Size(87, 16);
             this.label37.TabIndex = 9;
             this.label37.Text = "PAM API Port";
             // 
@@ -1218,7 +1218,7 @@
             this.label34.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label34.Location = new System.Drawing.Point(23, 28);
             this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(77, 16);
+            this.label34.Size = new System.Drawing.Size(76, 16);
             this.label34.TabIndex = 0;
             this.label34.Text = "User Name";
             // 
@@ -1238,7 +1238,7 @@
             this.label35.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label35.Location = new System.Drawing.Point(41, 55);
             this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(55, 16);
+            this.label35.Size = new System.Drawing.Size(54, 16);
             this.label35.TabIndex = 1;
             this.label35.Text = "Domain";
             // 
@@ -1257,7 +1257,7 @@
             this.label36.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label36.Location = new System.Drawing.Point(32, 82);
             this.label36.Name = "label36";
-            this.label36.Size = new System.Drawing.Size(68, 16);
+            this.label36.Size = new System.Drawing.Size(67, 16);
             this.label36.TabIndex = 2;
             this.label36.Text = "Password";
             // 
@@ -1292,7 +1292,7 @@
             this.label31.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label31.Location = new System.Drawing.Point(23, 28);
             this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(77, 16);
+            this.label31.Size = new System.Drawing.Size(76, 16);
             this.label31.TabIndex = 0;
             this.label31.Text = "User Name";
             // 
@@ -1312,7 +1312,7 @@
             this.label32.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label32.Location = new System.Drawing.Point(41, 55);
             this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(55, 16);
+            this.label32.Size = new System.Drawing.Size(54, 16);
             this.label32.TabIndex = 1;
             this.label32.Text = "Domain";
             // 
@@ -1331,7 +1331,7 @@
             this.label33.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label33.Location = new System.Drawing.Point(28, 82);
             this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(68, 16);
+            this.label33.Size = new System.Drawing.Size(67, 16);
             this.label33.TabIndex = 2;
             this.label33.Text = "Password";
             // 
@@ -1366,7 +1366,7 @@
             this.label28.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label28.Location = new System.Drawing.Point(23, 28);
             this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(77, 16);
+            this.label28.Size = new System.Drawing.Size(76, 16);
             this.label28.TabIndex = 0;
             this.label28.Text = "User Name";
             // 
@@ -1386,7 +1386,7 @@
             this.label29.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label29.Location = new System.Drawing.Point(41, 55);
             this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(55, 16);
+            this.label29.Size = new System.Drawing.Size(54, 16);
             this.label29.TabIndex = 1;
             this.label29.Text = "Domain";
             // 
@@ -1405,7 +1405,7 @@
             this.label30.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label30.Location = new System.Drawing.Point(28, 82);
             this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(68, 16);
+            this.label30.Size = new System.Drawing.Size(67, 16);
             this.label30.TabIndex = 2;
             this.label30.Text = "Password";
             // 
@@ -1445,7 +1445,7 @@
             this.label38.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label38.Location = new System.Drawing.Point(45, 35);
             this.label38.Name = "label38";
-            this.label38.Size = new System.Drawing.Size(160, 16);
+            this.label38.Size = new System.Drawing.Size(159, 16);
             this.label38.TabIndex = 0;
             this.label38.Text = "SCSM Server Host Name";
             // 
@@ -1468,6 +1468,7 @@
             this.outputTb.Name = "outputTb";
             this.outputTb.Size = new System.Drawing.Size(870, 428);
             this.outputTb.TabIndex = 0;
+            this.outputTb.TextChanged += new System.EventHandler(this.outputTb_TextChanged);
             // 
             // button1
             // 

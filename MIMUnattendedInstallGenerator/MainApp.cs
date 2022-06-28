@@ -25,7 +25,9 @@ namespace MIMUnattendedInstallGenerator
         public MainApp()
         {
             InitializeComponent();
-            
+            MIMSvcEmailPwd.Visible = false;
+            label11.Visible = false;
+
             if (File.Exists(configFile))
             {
                 //prompt for encryption key
@@ -58,7 +60,7 @@ namespace MIMUnattendedInstallGenerator
 
                 foreach (var s in selectedSvcs)
                 {
-                    
+
                     switch (s)
                     {
                         case "CommonServices":
@@ -156,8 +158,6 @@ namespace MIMUnattendedInstallGenerator
             //validate accounts
             //validate Exch connectivity
             //handle cert thumbprint prop 'CERTIFICATE_THUMBPRINT=1236454AVCD'
-            //find property name for echange online check box and EXO mailbox password
-            //find property name for poll exchange
             //add SPNs, configure delegation
 
         }
@@ -211,9 +211,8 @@ namespace MIMUnattendedInstallGenerator
                 checkBox4.Checked = false;
                 checkBox4.Enabled = false;
                 checkBox5.Checked = false;
-                checkBox5.Enabled = false;
             }
-            else
+            else if (!checkBox5.Checked)
             {
                 checkBox4.Enabled = true;
             }
@@ -227,6 +226,7 @@ namespace MIMUnattendedInstallGenerator
         private void checkBox5_CheckedChanged(object sender, EventArgs e)
         {
             o.MailIsExchOnline = checkBox5.Checked;
+
             if (checkBox5.Checked)
             {
                 label11.Visible = true;
@@ -234,16 +234,22 @@ namespace MIMUnattendedInstallGenerator
                 checkBox4.Enabled = false;
                 checkBox3.Enabled = false;
                 checkBox1.Enabled = false;
+                checkBox4.Checked = true;
+                checkBox3.Checked = true;
+                checkBox1.Checked = true;
+                mailSrvTxt.Text = "outlook.office365.com";
                 mailSrvTxt.Enabled = false;
             }
             else
             {
                 label11.Visible = false;
                 MIMSvcEmailPwd.Visible = false;
+                MIMSvcEmailPwd.Text = null;
                 checkBox4.Enabled = true;
                 checkBox3.Enabled = true;
                 checkBox1.Enabled = true;
                 mailSrvTxt.Enabled = true;
+                mailSrvTxt.Text = null;
             }
         }
 
@@ -255,6 +261,30 @@ namespace MIMUnattendedInstallGenerator
         private void MIMSvcAcctNameTxt_TextChanged(object sender, EventArgs e)
         {
             o.MIMSvcAcctName = MIMSvcAcctNameTxt.Text;
+            if (MIMSvcAcctNameTxt.Text.EndsWith("$"))
+            {
+                o.MIMSvcAcctIsGMSA = true;
+                MIMSvcAcctPwdTxt.Text = null;
+                MIMSvcAcctPwdTxt.Enabled = false;
+            }
+            else
+            {
+                o.MIMSvcAcctIsGMSA = false;
+                MIMSvcAcctPwdTxt.Enabled = true;
+            }
+            if (MIMSvcAcctNameTxt.Text.EndsWith("$") || checkBox5.Checked)
+            {
+                label11.Visible = true;
+                MIMSvcEmailPwd.Visible = true;
+                label11.Visible = true;
+            }
+            else
+            {
+                label11.Visible = false;
+                MIMSvcEmailPwd.Visible = false;
+                label11.Visible = false;
+                MIMSvcEmailPwd.Text = null;
+            }
         }
 
         private void MIMSvcAcctPwdTxt_TextChanged(object sender, EventArgs e)
@@ -299,7 +329,7 @@ namespace MIMUnattendedInstallGenerator
 
         private void SaveConfig()
         {
-            if (encryptionKey==null)
+            if (encryptionKey == null)
             {
                 //prompt for encryption key
                 var form1 = new GetKey(true);
@@ -476,7 +506,7 @@ namespace MIMUnattendedInstallGenerator
 
         private void pamApiAcctPwd_TextChanged(object sender, EventArgs e)
         {
-             d.PAMAPISvcAcctPwd = pamApiAcctPwd.Text;
+            d.PAMAPISvcAcctPwd = pamApiAcctPwd.Text;
         }
 
         private void pamApiPort_TextChanged(object sender, EventArgs e)
@@ -493,7 +523,7 @@ namespace MIMUnattendedInstallGenerator
         {
             if (svcs_mimsvcCb.Checked)
             {
-                if (o.ServicesToInstall==null || !o.ServicesToInstall.Contains("CommonServices"))
+                if (o.ServicesToInstall == null || !o.ServicesToInstall.Contains("CommonServices"))
                     o.ServicesToInstall.Add("CommonServices");
             }
             else
@@ -625,7 +655,7 @@ namespace MIMUnattendedInstallGenerator
 
         private void button4_Click(object sender, EventArgs e)
         {
-            var validationForm = new Validation(o,d);
+            var validationForm = new Validation(o, d);
             validationForm.Show();
         }
 
@@ -635,11 +665,16 @@ namespace MIMUnattendedInstallGenerator
             {
                 copyBtn.Visible = true;
 
-                string logFile = Path.Combine(o.LogPath, "MIM_Service_Install_Log_" + DateTime.Now.ToString("s").Replace(":", "-") + ".log");
+                string logFile = Path.Combine(o.LogPath, "MIM_Service_Install_Log_%yyyy%_%mn%_%dd%_%hh%_%MM%_%ss%.log");
                 string installDir = o.InstallDrive + @"\Program Files\Microsoft Forefront Identity Manager\2010\";
                 string msiPath = Path.Combine(o.MSIPath, "Service and Portal.msi");
 
                 string output = "";
+
+                output += "@echo off";
+                output += "for /f \"tokens = 2 delims == \" %%a in ('wmic OS Get localdatetime /value') do set \"dt =%% a\"" + Environment.NewLine;
+                output += "set \"yyyy=%dt:~0,4%\" & set \"mn=%dt:~4,2%\" & set \"dd=%dt:~6,2%\"" + Environment.NewLine;
+                output += "set \"hh=%dt:~8,2%\" & set \"MM=%dt:~10,2%\" & set \"ss=%dt:~12,2%\"" + Environment.NewLine;
 
                 output += "net start spadminv4" + Environment.NewLine;
 
@@ -650,22 +685,11 @@ namespace MIMUnattendedInstallGenerator
 
                 if (o.ServicesToInstall.Contains("CommonServices"))
                 {
-                    if (o.MailIsExchOnline)
-                    {
-                        output += " MAIL_SERVER_IS_EXCHANGE_ONLINE=" + BooleanToString(o.MailIsExchOnline);
-                        output += " MAIL_SERVER=outlook.office365.com";
-                        output += " MAIL_SERVER_USE_SSL=" + BooleanToString(true);
-                        output += " MAIL_SERVER_IS_EXCHANGE=" + BooleanToString(true);
-                        output += " POLL_EXCHANGE_ENABLED=" + BooleanToString(true);
-                    }
-                    else
-                    {
-                        if (!string.IsNullOrEmpty(o.MailServer)) { output += " MAIL_SERVER=" + o.MailServer; }
-                        output += " MAIL_SERVER_USE_SSL=" + BooleanToString(o.MailUseSSL);
-                        output += " MAIL_SERVER_IS_EXCHANGE=" + BooleanToString(o.MailIsExch);
-                        output += " POLL_EXCHANGE_ENABLED=" + BooleanToString(o.MailPollExch);
-                        output += " MAIL_SERVER_IS_EXCHANGE_ONLINE=" + BooleanToString(o.MailIsExchOnline);
-                    }
+                    if (!string.IsNullOrEmpty(o.MailServer)) { output += " MAIL_SERVER=" + o.MailServer; }
+                    output += " MAIL_SERVER_USE_SSL=" + BooleanToString(o.MailUseSSL);
+                    output += " MAIL_SERVER_IS_EXCHANGE=" + BooleanToString(o.MailIsExch);
+                    output += " POLL_EXCHANGE_ENABLED=" + BooleanToString(o.MailPollExch);
+                    output += " MAIL_SERVER_IS_EXCHANGE_ONLINE=" + BooleanToString(o.MailIsExchOnline);
 
                     if (!string.IsNullOrEmpty(o.MIMPortalURL)) { output += " SQLSERVER_SERVER=" + o.SQLInstance; }
                     if (!string.IsNullOrEmpty(o.SQLInstance)) { output += " SQLSERVER_DATABASE=" + o.SQLDBName; }
@@ -673,10 +697,11 @@ namespace MIMUnattendedInstallGenerator
                     output += " EXISTINGDATABASE=" + BooleanToString(o.SQLUseExisting);
 
                     if (!string.IsNullOrEmpty(o.MIMSvcAcctName)) { output += " SERVICE_ACCOUNT_NAME=" + o.MIMSvcAcctName; }
-                    if (!string.IsNullOrEmpty(o.MIMSvcAcctPwd)) { output += " SERVICE_ACCOUNT_PASSWORD=\"" + d.MIMSvcAcctPwd + "\""; }
+                    if (!string.IsNullOrEmpty(d.MIMSvcAcctPwd)) { output += " SERVICE_ACCOUNT_PASSWORD=\"" + d.MIMSvcAcctPwd + "\""; }
                     if (!string.IsNullOrEmpty(o.MIMSvcAcctDomain)) { output += " SERVICE_ACCOUNT_DOMAIN=" + o.MIMSvcAcctDomain; }
+                    if (o.MIMSvcAcctIsGMSA) { output += " USE_MANAGED_ACCOUNT_FOR_SERVICE=1"; }
                     if (!string.IsNullOrEmpty(o.MIMSvcAcctEmail)) { output += " SERVICE_ACCOUNT_EMAIL=" + o.MIMSvcAcctEmail; }
-                    if (!string.IsNullOrEmpty(o.MIMSvcAcctEmailPwd)) { output += " SERVICE_ACCOUNT_EMAIL_PASSWORD=\"" + d.MIMSvcAcctEmailPwd + "\""; }
+                    if (!string.IsNullOrEmpty(d.MIMSvcAcctEmailPwd)) { output += " SERVICE_ACCOUNT_EMAIL_PASSWORD=\"" + d.MIMSvcAcctEmailPwd + "\""; }
 
                     if (!string.IsNullOrEmpty(o.MIMSvcMaAcct)) { output += " SYNCHRONIZATION_SERVER_ACCOUNT=" + o.MIMSvcMaAcct; }
                     if (!string.IsNullOrEmpty(o.SyncServer)) { output += " SYNCHRONIZATION_SERVER=" + o.SyncServer; }
@@ -717,13 +742,13 @@ namespace MIMUnattendedInstallGenerator
                 {
                     if (!string.IsNullOrEmpty(o.PAMMonSvcAcctDomain)) { output += " PAM_MONITORING_SERVICE_ACCOUNT_DOMAIN=" + o.PAMMonSvcAcctDomain; }
                     if (!string.IsNullOrEmpty(o.PAMMonSvcAcctName)) { output += " PAM_MONITORING_SERVICE_ACCOUNT_NAME=" + o.PAMMonSvcAcctName; }
-                    if (!string.IsNullOrEmpty(o.PAMMonSvcAcctPwd)) { output += " PAM_MONITORING_SERVICE_ACCOUNT_PASSWORD=\"" + d.PAMMonSvcAcctPwd + "\""; }
+                    if (!string.IsNullOrEmpty(d.PAMMonSvcAcctPwd)) { output += " PAM_MONITORING_SERVICE_ACCOUNT_PASSWORD=\"" + d.PAMMonSvcAcctPwd + "\""; }
                     if (!string.IsNullOrEmpty(o.PAMComSvcAcctDomain)) { output += " PAM_COMPONENT_SERVICE_ACCOUNT_DOMAIN=" + o.PAMComSvcAcctDomain; }
                     if (!string.IsNullOrEmpty(o.PAMComSvcAcctName)) { output += " PAM_COMPONENT_SERVICE_ACCOUNT_NAME=" + o.PAMComSvcAcctName; }
-                    if (!string.IsNullOrEmpty(o.PAMComSvcAcctPwd)) { output += " PAM_COMPONENT_SERVICE_ACCOUNT_PASSWORD=\"" + d.PAMComSvcAcctPwd + "\"" + ""; }
+                    if (!string.IsNullOrEmpty(d.PAMComSvcAcctPwd)) { output += " PAM_COMPONENT_SERVICE_ACCOUNT_PASSWORD=\"" + d.PAMComSvcAcctPwd + "\"" + ""; }
                     if (!string.IsNullOrEmpty(o.PAMAPISvcAcctDomain)) { output += " PAM_REST_API_APPPOOL_ACCOUNT_DOMAIN=" + o.PAMAPISvcAcctDomain; }
                     if (!string.IsNullOrEmpty(o.PAMAPISvcAcctName)) { output += " PAM_REST_API_APPPOOL_ACCOUNT_NAME=" + o.PAMAPISvcAcctName; }
-                    if (!string.IsNullOrEmpty(o.PAMAPISvcAcctPwd)) { output += " PAM_REST_API_APPPOOL_ACCOUNT_PASSWORD=\"" + d.PAMAPISvcAcctPwd + "\""; }
+                    if (!string.IsNullOrEmpty(d.PAMAPISvcAcctPwd)) { output += " PAM_REST_API_APPPOOL_ACCOUNT_PASSWORD=\"" + d.PAMAPISvcAcctPwd + "\""; }
                     if (!string.IsNullOrEmpty(o.PAMAPIPort)) { output += " MIMPAM_REST_API_PORT=" + o.PAMAPIPort; }
                     output += " CONFIG_FIREWALL=" + BooleanToString(o.PAMAPIConfigFW);
                 }
@@ -735,7 +760,7 @@ namespace MIMUnattendedInstallGenerator
 
                 if (!string.IsNullOrWhiteSpace(o.LogPath))
                 {
-                    output += " /l*v \"" + logFile + "\"";
+                    output += " /l*v \"" + logFile +"\"";
                 }
 
                 output += " /qn";
@@ -751,6 +776,11 @@ namespace MIMUnattendedInstallGenerator
         private void copyBtn_Click(object sender, EventArgs e)
         {
             Clipboard.SetText(outputTb.Text);
+        }
+
+        private void outputTb_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
